@@ -1,0 +1,36 @@
+{
+  "name": "replate",
+  "version": "0.0.1",
+  "description": "React static site generator boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/build",
+    "browserify": "browserify src/client.js -o js/app.js",
+    "watch:build": "watch 'npm run build' ./src",
+    "watch:browserify": "watch 'npm run browserify' ./src",
+    "serve": "http-server -p 8000",
+    "start": "parallelshell 'npm run watch:build' 'npm run watch:browserify' 'npm run serve'"
+  },
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "http-server": "^0.7.5",
+    "lodash": "^3.3.1",
+    "parallelshell": "^1.0.4",
+    "react": "^0.12.2",
+    "react-async": "^2.0.1",
+    "react-html": "0.0.1",
+    "react-router-component": "^0.24.1",
+    "react-tools": "^0.12.2",
+    "reactify": "^1.0.0",
+    "static-react": "0.0.1",
+    "watch": "^0.14.0"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
