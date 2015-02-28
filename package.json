@@ -2,7 +2,6 @@
   "name": "replate",
   "version": "0.0.1",
   "description": "React static site generator boilerplate",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build",
@@ -32,5 +31,14 @@
     "transform": [
       "reactify"
     ]
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxnblk/replate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jxnblk/replate/issues"
+  },
+  "homepage": "https://github.com/jxnblk/replate"
 }
