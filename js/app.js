@@ -19912,8 +19912,9 @@ var Link = Router.Link;
 module.exports = React.createClass({displayName: "exports",
 
   renderLink: function(link) {
+    var href = this.props.baseUrl + link.path;
     return (
-      React.createElement(Link, {href: link.path, 
+      React.createElement(Link, {href: href, 
         key: link.title, 
         className: "button button-transparent blue"}, 
         link.title
@@ -19927,7 +19928,7 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement("div", {className: "flex flex-baseline flex-wrap py2 border-top"}, 
           React.createElement("h1", {className: "h5 mt0 mb0 mr1"}, this.props.title), 
           React.createElement("p", {className: "h5 m0"}, "v", this.props.version), 
-          React.createElement("nav", null, 
+          React.createElement("div", null, 
             this.props.routes.map(this.renderLink)
           ), 
           React.createElement("div", {className: "flex-auto"}), 
@@ -20018,8 +20019,9 @@ var NotFoundPage = require('./404.jsx');
 
 module.exports = React.createClass({displayName: "exports",
   render: function() {
+    var script = this.props.baseUrl + this.props.script;
     return (
-      React.createElement(Html, React.__spread({},  this.props), 
+      React.createElement(Html, React.__spread({},  this.props, {script: script}), 
         React.createElement("div", {className: "flex flex-column container", 
           style: { minHeight: '100vh'}}, 
           React.createElement(Header, React.__spread({},  this.props)), 

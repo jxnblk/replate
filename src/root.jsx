@@ -16,8 +16,9 @@ var NotFoundPage = require('./404.jsx');
 
 module.exports = React.createClass({
   render: function() {
+    var script = this.props.baseUrl + this.props.script;
     return (
-      <Html {...this.props}>
+      <Html {...this.props} script={script}>
         <div className="flex flex-column container"
           style={{ minHeight: '100vh' }}>
           <Header {...this.props} />
