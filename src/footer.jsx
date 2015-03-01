@@ -8,7 +8,7 @@ module.exports = React.createClass({
   renderLink: function(link) {
     var href = this.props.baseUrl + link.path;
     return (
-      <Link href={href}
+      <Link href={link.path}
         key={link.title}
         className="button button-transparent blue">
         {link.title}
