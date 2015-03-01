@@ -10,8 +10,8 @@ var Html = require('react-html');
 var Header = require('./header.jsx');
 var Footer = require('./footer.jsx');
 
-var Home = require('./home.jsx');
-var Docs = require('./docs.jsx');
+var Home = React.createFactory(require('./home.jsx'));
+var Docs = React.createFactory(require('./docs.jsx'));
 var NotFoundPage = require('./404.jsx');
 
 var Pages = React.createClass({
@@ -38,7 +38,7 @@ module.exports = React.createClass({
           <Header {...this.props} />
           <div className="flex-auto px2">
             <Locations path={path}>
-              <Location path={this.props.baseUrl + '/*'} handler={Pages(this.props)} />
+              <Location path={this.props.baseUrl + '/*'} handler={React.createFactory(Pages)(this.props)} />
             </Locations>
           </div>
           <Footer {...this.props} />
