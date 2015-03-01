@@ -19915,7 +19915,7 @@ module.exports = React.createClass({displayName: "exports",
     var href = this.props.baseUrl + link.path;
     return (
       React.createElement(Link, {href: href, 
-        key: link.title, 
+        key: 'footer-' + link.title, 
         className: "button button-transparent blue"}, 
         link.title
       )
@@ -19928,11 +19928,9 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement("div", {className: "flex flex-baseline flex-wrap py2 border-top"}, 
           React.createElement("h1", {className: "h5 mt0 mb0 mr1"}, this.props.title), 
           React.createElement("p", {className: "h5 m0"}, "v", this.props.version), 
-          /*
-          <div>
-            {this.props.routes.map(this.renderLink)}
-          </div>
-            */
+          React.createElement("div", null, 
+            this.props.routes.map(this.renderLink)
+          ), 
           React.createElement("div", {className: "flex-auto"}), 
           React.createElement("p", {className: "h5 bold m0"}, 
             "Made by", 

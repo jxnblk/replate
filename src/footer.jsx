@@ -9,7 +9,7 @@ module.exports = React.createClass({
     var href = this.props.baseUrl + link.path;
     return (
       <Link href={href}
-        key={link.title}
+        key={'footer-' + link.title}
         className="button button-transparent blue">
         {link.title}
       </Link>
@@ -22,11 +22,9 @@ module.exports = React.createClass({
         <div className="flex flex-baseline flex-wrap py2 border-top">
           <h1 className="h5 mt0 mb0 mr1">{this.props.title}</h1>
           <p className="h5 m0">v{this.props.version}</p>
-          {/*
           <div>
             {this.props.routes.map(this.renderLink)}
           </div>
-            */}
           <div className="flex-auto" />
           <p className="h5 bold m0">
             Made by

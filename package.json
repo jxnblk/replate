@@ -7,6 +7,7 @@
     "build": "node scripts/build",
     "browserify": "browserify src/client.js -o js/app.js",
     "uglify": "uglifyjs js/app.js -o js/app.min.js",
+    "prod": "npm run build && npm run browserify && npm run uglify",
     "watch:build": "watch 'npm run build' ./src",
     "watch:browserify": "watch 'npm run browserify' ./src",
     "watch:uglify": "watch 'npm run uglify' ./js",
