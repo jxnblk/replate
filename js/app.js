@@ -20030,31 +20030,19 @@ var Home = require('./home.jsx');
 var Docs = require('./docs.jsx');
 var NotFoundPage = require('./404.jsx');
 
-/*
-var Pages = React.createClass({
+var Pages = React.createClass({displayName: "Pages",
   render: function() {
-    return (
-      <Locations contextual>
-        <Location path="/" handler={Home} />
-        <Location path="/docs" handler={Docs} />
-        <NotFound handler={NotFoundPage} />
-      </Locations>
-    )
-  }
-});
-*/
-
-module.exports = React.createClass({displayName: "exports",
-
-  renderPages: function() {
     return (
       React.createElement(Locations, {contextual: true}, 
         React.createElement(Location, {path: "/", handler: Home(this.props)}), 
-        React.createElement(Location, {path: "/docs", handler: Docs}), 
+        React.createElement(Location, {path: "/docs", handler: Docs(this.props)}), 
         React.createElement(NotFound, {handler: NotFoundPage})
       )
     )
-  },
+  }
+});
+
+module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     var script = this.props.baseUrl + this.props.script;
@@ -20066,7 +20054,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement(Header, React.__spread({},  this.props)), 
           React.createElement("div", {className: "flex-auto px2"}, 
             React.createElement(Locations, {path: path}, 
-              React.createElement(Location, {path: this.props.baseUrl + '/*', handler: this.renderPages})
+              React.createElement(Location, {path: this.props.baseUrl + '/*', handler: Pages(this.props)})
             )
           ), 
           React.createElement(Footer, React.__spread({},  this.props))
