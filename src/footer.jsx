@@ -27,8 +27,7 @@ module.exports = React.createClass({
           </div>
           <div className="flex-auto" />
           <p className="h5 bold m0">
-            Made by
-            <a href="//jxnblk.com">Jxnblk</a>
+            Made by <a href="//jxnblk.com">Jxnblk</a>
           </p>
         </div>
       </footer>

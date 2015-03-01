@@ -10,8 +10,13 @@ props.routes = [
   { path: '/docs', title: 'Docs' },
 ];
 
-props.baseUrl = '/replate';
-//props.baseUrl = '';
+if (process.env.NODE_ENV === 'production') {
+  console.log('production build');
+  props.baseUrl = '/replate';
+} else {
+  console.log('development build');
+  props.baseUrl = '';
+}
 
 props.title = _.capitalize(props.name);
 props.stylesheet = 'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.2/bassdock.min.css';
